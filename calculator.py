@@ -11,23 +11,51 @@ from arithmetic import *
 while True:
     guest_input = raw_input(">>>")
     guest_input = guest_input.split(" ")
-    if guest_input[0] == "q":
-        break
-    elif guest_input[0] == "+":
-        print int(guest_input[1]) + int(guest_input[2])
-    elif guest_input[0] == "-":
-        print int(guest_input[1]) - int(guest_input[2])
-    elif guest_input[0] == "*":
-        print int(guest_input[1]) * int(guest_input[2])
-    elif guest_input[0] == "/":
-        print float(guest_input[1]) / int(guest_input[2])
-    elif guest_input[0] == "square":
-        print int(guest_input[1]) ** 2
-    elif guest_input[0] == "cube":
-        print int(guest_input[1])**3
-    elif guest_input[0] == "pow":
-        print int(guest_input[1])**int(guest_input[2])
-    elif guest_input[0] == "mod":
-        print int(guest_input[1]) % int(guest_input[2])
-    else:
-        print "not a valid input"
+
+    try:
+        if guest_input[0] == "q":
+            break
+        elif guest_input[0] == "+":
+            if len(guest_input) == 3:
+                print int(guest_input[1]) + int(guest_input[2])
+            else:
+                print "Please only input 2 numbers"
+        elif guest_input[0] == "-":
+            if len(guest_input) == 3:
+                print int(guest_input[1]) - int(guest_input[2])
+            else:
+                print "Please only input 2 numbers"
+        elif guest_input[0] == "*":
+            if len(guest_input) == 3:
+                print int(guest_input[1]) * int(guest_input[2])
+            else:
+                print "Please only input 2 numbers"
+        elif guest_input[0] == "/":
+            if len(guest_input) == 3:
+                print float(guest_input[1]) / int(guest_input[2])
+            else:
+                print "Please only input 2 numbers"
+        elif guest_input[0] == "square":
+            if len(guest_input) == 2:
+                print int(guest_input[1]) ** 2
+            else:
+                print "Please only input 1 number"
+        elif guest_input[0] == "cube":
+            if len(guest_input) == 2:
+                print int(guest_input[1])**3
+            else:
+                print "Please only input 1 number"
+        elif guest_input[0] == "pow":
+            if len(guest_input) == 3:
+                print int(guest_input[1])**int(guest_input[2])
+            else:
+                print "Please only input 2 numbers"
+        elif guest_input[0] == "mod":
+            if len(guest_input) == 3:
+                print int(guest_input[1]) % int(guest_input[2])
+            else:
+                print "Please only input 2 numbers"
+        else:
+            print "not a valid math operator. Please use + - * / mod cube pow or square."
+    except:
+        print "Not a valid number or math operator"
