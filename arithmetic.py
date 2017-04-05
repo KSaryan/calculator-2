@@ -1,31 +1,41 @@
 """Math functions for calculator."""
 
 
-def add(num1, num2):
+def add(num_list):
     """Return the sum of the two input integers."""
+    total = 0
+    for num in num_list:
+        total += num
+    return total
 
-    return num1 + num2
 
-
-def subtract(num1, num2):
+def subtract(num_list):
     """Return the second number subtracted from the first."""
+    total = num_list[0]
+    for i in range (1, len(num_list)):
+        total -= num_list[i]
+    return total
 
-    return num1 - num2
 
-
-def multiply(num1, num2):
+def multiply(num_list):
     """Multiply the two inputs together."""
+    total = 1
+    for num in num_list:
+        total *= num
+    return total
 
-    return num1 * num2
 
-
-def divide(num1, num2):
+def divide(num_list):
     """Divide the first input by the second, returning a floating point."""
+    total = float(num_list[0])
+    for i in range(1, len(num_list)):
+        total /= num_list[i]
+    return total
+
 
     # Need to turn at least one argument to float for division to
     # not be integer division
 
-    return float(num1) / num2
 
 
 def square(num1):
