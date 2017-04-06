@@ -4,10 +4,23 @@ Using the arithmetic.py file from Calculator Part 1, create the
 calculator program yourself in this file.
 """
 
-from arithmetic import *
+from arithmetic2 import *
 
 
 # Your code goes here
+def my_reduce(math_function, num_list):
+    if math_function == "add":
+        total = 0
+        for num in num_list:
+            total = total + int(num)
+
+    elif math_function == "subtract":
+        total = int(num_list[0])
+        for i in range(1, len(num_list)):
+            total = total - int(num_list[i])
+    return total
+
+
 while True:
     guest_input = raw_input(">>>")
     guest_input = guest_input.split(" ")
@@ -16,25 +29,16 @@ while True:
         if guest_input[0] == "q":
             break
         elif guest_input[0] == "+":
-            if len(guest_input) == 3:
-                print int(guest_input[1]) + int(guest_input[2])
-            else:
-                print "Please only input 2 numbers"
+            print my_reduce("add", guest_input[1:])
         elif guest_input[0] == "-":
-            if len(guest_input) == 3:
-                print int(guest_input[1]) - int(guest_input[2])
-            else:
-                print "Please only input 2 numbers"
+            print my_reduce("subtract", guest_input[1:])
+
         elif guest_input[0] == "*":
-            if len(guest_input) == 3:
-                print int(guest_input[1]) * int(guest_input[2])
-            else:
-                print "Please only input 2 numbers"
+            print reduce(multiply, guest_input[1:])
+
         elif guest_input[0] == "/":
-            if len(guest_input) == 3:
-                print float(guest_input[1]) / int(guest_input[2])
-            else:
-                print "Please only input 2 numbers"
+            print reduce(divide, guest_input[1:])
+
         elif guest_input[0] == "square":
             if len(guest_input) == 2:
                 print int(guest_input[1]) ** 2
