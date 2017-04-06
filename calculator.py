@@ -40,9 +40,9 @@ inputs = open("inputs.txt")
 #allows user to quit
 #uses my_reduce function
 #uses math operation to decide output
-#while True:
-    #line = raw_input(">>>")
-    #line = line.split(" ")
+
+#line = raw_input(">>>")
+#line = line.split(" ")
 
 for line in inputs:
     line = line.rstrip()
